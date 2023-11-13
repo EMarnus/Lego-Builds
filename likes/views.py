@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from drf_api.permissions import IsOwnerOrReadOnly
+from drf_lego_api.permissions import IsOwnerOrReadOnly
 from .models import Like
 from .serializers import LikeSerializer
 
