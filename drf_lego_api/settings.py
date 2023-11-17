@@ -39,7 +39,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-emarnus-pp5-8q1790mgsvc.ws-eu106.gitpod.io', os.environ.get('ALLOWED_HOST')]
+ALLOWED_HOSTS = ['8000-emarnus-pp5-8q1790mgsvc.ws-eu106.gitpod.io', os.environ.get('ALLOWED_HOST'), 'lego-builds-284f09d1e728.herokuapp.com']
 
 
 # Application definition
@@ -154,6 +154,7 @@ if 'DEV' in os.environ:
         }
     }
 else:
+    print('Elephant')
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
