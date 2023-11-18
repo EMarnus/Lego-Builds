@@ -1,112 +1,163 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# My Lego Build
 
-Welcome Emile,
+![AM I Responsive images](#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### [Live Website](#)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+A community wesite to organise gaming events/times.  
+The objective of this is to provide a simple site to try to organise gaming events among friends. These days it's difficult to get my gaming group together to play something as we all have resposibilities this is an attempt to make getting together easier.
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
+2
+  3
+    4
+1. [User Experience (UX)](#user-experience-ux)
+    1. [Strategy](#strategy)
+        1. [Project Goals](#project-goals)
+        2. [User Goals](#user-goals)
+    2. [Structure](#structure)
+        1. [Database Model](#database-model)
+        2. [Wireframes](#wireframe)
+2. [Features](#features)
+    1. [Nav Bar](#the-nav-bar)
+    2. [Home Page](#home-page)
+    3. [Event Details Page](#event-details-page)
+3. [Features Left to Implement](#features-left-to-implement)
+4. [Testing](#testing)
+  1. [Testing](#testing)
+4. [Credits](#credits)
 
-`python3 -m http.server`
-`python manage.py runserver`
-`python manage.py startapp NAME`
+***
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## User Experience (UX)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Strategy
 
-A blue button should appear to click: _Make Public_,
+#### Project Goals
 
-Another blue button should appear to click: _Open Browser_.
+* The website contains simple colors for a modern and clean design.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* Responsive design to make the website accessible on different screen sizes.
 
-To log into the Heroku toolbelt CLI:
+* Structure is easy to understand and navigates effortlessly.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+* Site users are able to register an account in order to interact with the content.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+* Site users are able to post events and indicate if they would like to attand.
 
-------
 
-## Release History
+#### User Goals
+GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress. I used lables on the stories to priority of the feature.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+[Features/Planning Board](#) 
 
-**September 20 2023:** Update Python version to 3.9.17.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Structure
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+#### Database Model
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+The database model has been designed using [drawsql](https://drawsql.app/). The type of database being used for the is relational database being managed using [PostgreSQL](https://www.postgresql.org/).
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Data Model](assets/readme/datamodel.png)  
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Wireframes
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Page | Desktop Version | Mobile Version
+--- | --- | ---
+Index / User Logged Out | ![Desktop index / user logged out wireframe image](assets/readme/outindex.png) | ![Mobile index / user logged out wireframe image](assets/readme/outindexm.png)
+Index / User Logged In | ![Desktop sign up wireframe image](assets/readme/inindex.png) | ![Mobile sign up wireframe image](assets/readme/inindexm.png)
+Sign Up | ![Desktop log in wireframe image](assets/readme/register.png) | 
+Profile | ![Desktop index / user logged in wireframe image](assets/readme/profile.png) | 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Features 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### The Nav Bar
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  - Featured at the top of the page, bracketed by the site name and catchfrase we have the nav links
+  - If you're not logged in you see, A Home link that show all the events with some detals, the register link - lets you register and the Login link which lets you log in if you are already registered.  
+    ![Logged out Nav](assets/readme/outnav.PNG)
+  - If you are logged in you see, A Home link that show all the events with some detals, Add Events which lets you add events, and a User dropdown which lets you logout and view your profile(To be expanded)  
+  ![Logged in Nav](assets/readme/innav.PNG)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Home Page
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  - This section is the main focus of the website(for now). Here you see all the Events that have been posted by users with some detail.
+  - As a logged in user you can view more details on the Events or if you posted the Event you can access the Edit and Delete functions from here.  
+  ![Logged in Index](assets/readme/inindexbody.PNG)  
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  - As a logged out user you can only see the Event panels.
+  ![Logged out Index](assets/readme/outindexbody.PNG)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### Event Details Page  
 
-------
+- In the first section you can see all the details for the events.
+![Details secion one](assets/readme/detialsone.PNG)
+- In the second section you can mark yourself as attanding the event, see previous comments and leave a comment of your own.
+![Details secion one](assets/readme/detailstwo.PNG)  
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+### Features Left to Implement
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- Fleshed out Profile for users
+- Ability for Users to see others Profiles
+- Ability to message others
+- Ability to upload custom images for events
+- Reset passwords
+- Delete confirmation
+- Features left on Stretch
 
-**How will this affect me?**
+## Testing 
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Ongoing testing on Chrome as features were added. Additional Testing was done desktop Edge, Firefox & Mobile Chrome. Manual testing was done following this checklist [Checklist](https://docs.google.com/spreadsheets/d/1UXtTze1940aCpoY0gpDi4OD64AhHgHELo6on6-MYtAA/edit?usp=sharing).
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Validator Testing 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- HTML - [W3C validator](https://validator.w3.org/)
+    - Pages tested on W3C, all issues raise were fixed
+- CSS - [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
+    - CSS tested and no problems found, Majority of styling from Bootstrap
+- Python code was checked by running pycodestyle and pylint on all the apps. Unable to resolve pycodestyle on migration files.
 
-**So….?**
+### Lighthouse Resualts
+- Login  
+![Login](/assets/readme/lighthouse_login.PNG)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+- Register  
+![Register](/assets/readme/lighthouse_register.PNG)
 
-**Can I opt out?**
+- Home  
+![Home](/assets/readme/lighthouse_home.PNG)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Profile  
+![Profile](/assets/readme/lighthouse_profile.PNG)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- Add Event  
+![Add Event 1](/assets/readme/lighthouse_booking1.PNG)  
+![Add Event 2](/assets/readme/lighthouse_booking2.PNG)
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Fixed Bugs
+- Updating Events broke after adding previously submitted dates as default. 
+- When not logged it, colums do not display correctly on homepage, fixed with [Commit](https://github.com/EMarnus/PP4-Redo/commit/8f04d5038b0b07338a8e9da65b9a83187e89506f?diff=split)
+- Pagination doesn't work, just keeps flowing down. [Commit](https://github.com/EMarnus/PP4-Redo/commit/34cf80bb00148e4965a48b059a2a1252377f4600)
 
----
 
-Happy coding!
+## Deployment
+
+- The site was deployed using Heroku: 
+  - In heroku Create a new App
+  - In your new App go to settings and reveal Config Vars, add your variables from env.py as well as PORT: 8000
+  - Make sure your repo contains a Procfile
+  - Go to Deploy, select GitHub as the Deployment method, Deploy Branch from Main.
+
+
+## Credits 
+- Logo sourced from [Logo](https://www.freepnglogos.com/images/lego-png-logo-3370.html)
+- And as always Stack Overflow, just an awesome site where you can find all the answers especially the ones you weren't looking for.
+
+### Content 
+- Content written by developer, unless otherwise credited
+- Logo sourced from [Logo](https://www.freepnglogos.com/images/lego-png-logo-3370.html)
