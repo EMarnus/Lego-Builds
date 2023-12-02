@@ -40,6 +40,7 @@ class PostSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
             "title",
+            "code",
             "content",
             "image",
             "is_owner",
