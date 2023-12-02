@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const baseURL = "api/"; 
+const baseURL = ""; 
 //Base URL from axios
 
 export const handlers = [
