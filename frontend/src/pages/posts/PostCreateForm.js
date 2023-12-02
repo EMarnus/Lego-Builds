@@ -26,10 +26,11 @@ function PostCreateForm() {
 
   const [postData, setPostData] = useState({
     title: "",
+    code: "",
     content: "",
     image: "",
   });
-  const { title, content, image } = postData;
+  const { title, code, content, image } = postData;
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -56,6 +57,7 @@ function PostCreateForm() {
     const formData = new FormData();
 
     formData.append("title", title);
+    formData.append("code", code);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 
@@ -82,6 +84,21 @@ function PostCreateForm() {
         />
       </Form.Group>
       {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
+<Form.Group>
+        <Form.Label>Lego Code</Form.Label>
+        <Form.Control
+          type="text"
+          name="code"
+          value={code}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      {errors?.code?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
