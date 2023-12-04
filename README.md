@@ -140,14 +140,14 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 
 
 ### Fixed Bugs
-- Updating Events broke after adding previously submitted dates as default. 
-- When not logged it, colums do not display correctly on homepage, fixed with [Commit](https://github.com/EMarnus/PP4-Redo/commit/8f04d5038b0b07338a8e9da65b9a83187e89506f?diff=split)
-- Pagination doesn't work, just keeps flowing down. [Commit](https://github.com/EMarnus/PP4-Redo/commit/34cf80bb00148e4965a48b059a2a1252377f4600)
+- Search Broken
+- Login Status occasionaly lost with page loading
+- 
 
 
 ## Deployment
 
-- The site was deployed using Heroku: 
+- The site was deployed using Heroku following instructions from Code Institute for deploying a combined API and React Frontend: 
   - In heroku Create a new App
   - In your new App go to settings and reveal Config Vars, add your variables from env.py as well as PORT: 8000
   - Make sure your repo contains a Procfile
@@ -155,6 +155,7 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 
 
 ## Credits 
+- Project is based on the Moments walkthrough Project by Code Institute.
 - Logo sourced from [Logo](https://www.freepnglogos.com/images/lego-png-logo-3370.html)
 - And as always Stack Overflow, just an awesome site where you can find all the answers especially the ones you weren't looking for.
 

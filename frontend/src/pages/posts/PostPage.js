@@ -21,6 +21,7 @@ import PopularProfiles from "../profiles/PopularProfiles"
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   const currentUser = useCurrentUser();
   const profile_image = currentUser?.profile_image;
@@ -35,20 +36,33 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
+        setHasLoaded(true);
       } catch (err) {
         console.log(err);
       }
     };
 
-    handleMount();
+    setHasLoaded(false);
+    const timer = setTimeout(() => {
+      handleMount();
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+    
   }, [id]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PopularProfiles mobile/>
-        <Post {...post.results[0]} setPosts={setPost} postPage />
-        <Container className={appStyles.Content}>
+
+      {hasLoaded ? (
+          <>
+          
+          <PopularProfiles mobile/>
+          <Post {...post.results[0]} setPosts={setPost} postPage />
+          <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
               profile_id={currentUser.profile_id}
@@ -80,12 +94,18 @@ function PostPage() {
           ) : (
             <span>No comments... yet</span>
           )}
-        </Container>
-        <Container className={appStyles.Content}>Comments</Container>
-      </Col>
-      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        <PopularProfiles />
-      </Col>
+          </Container>
+        
+          </>
+        ) : (
+          <Container className={appStyles.Content}>
+            <Asset spinner />
+          </Container>
+        )}
+        </Col>
+        <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+          <PopularProfiles />
+        </Col>
     </Row>
   );
 }
