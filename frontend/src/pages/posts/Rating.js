@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
-import styles from "../../styles/Rating.module.css";
+import rstyles from "../../styles/Rating.module.css";
 
 function Rating() {
   const [rating, setRating] = useState(null);
@@ -19,7 +19,7 @@ function Rating() {
               onClick={() => setRating(currentRating)}
             />
             <FaStar 
-              className={`${styles.SearchIcon}`} 
+              className={`${rstyles.SearchIcon}`} 
               size={40} 
               color={currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
               onMouseEnter={() => setHover(currentRating)}

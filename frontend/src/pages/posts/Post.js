@@ -9,7 +9,7 @@ import { Link, useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import Rating from "./Rating";
+// import Rating from "./Rating";
 
 const Post = (props) => {
   const {
@@ -27,7 +27,9 @@ const Post = (props) => {
     updated_at,
     postPage,
     setPosts,
+    // post_rating,
   } = props;
+
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
@@ -86,7 +88,6 @@ const Post = (props) => {
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>
-          <Rating />
           <div className="d-flex align-items-center">
             <span>{updated_at}</span>
             {is_owner && postPage && (

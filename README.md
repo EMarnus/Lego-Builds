@@ -140,7 +140,7 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 
 
 ### Fixed Bugs
-- Search Broken
+- Search Broken [Fix Commit](https://github.com/EMarnus/Lego-Builds/commit/c8ff1f7e0cf9eacb12bc68c2870372991eed9422)
 - Login Status occasionaly lost with page loading
 - 
 

@@ -50,4 +50,5 @@ class PostSerializer(serializers.ModelSerializer):
             "like_id",
             "comments_count",
             "likes_count",
+            "post_rating",
         ]

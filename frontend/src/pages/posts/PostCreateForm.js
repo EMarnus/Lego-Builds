@@ -19,9 +19,11 @@ import btnStyles from "../../styles/Button.module.css";
 import { useHistory } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+// import Rating from "./Rating";
 
 function PostCreateForm() {
   useRedirect("loggedOut");
+  
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
@@ -29,8 +31,11 @@ function PostCreateForm() {
     code: "",
     content: "",
     image: "",
+    post_rating: "",
   });
-  const { title, code, content, image } = postData;
+
+  const { title, code, content, image, post_rating } = postData;
+  
 
   const imageInput = useRef(null);
   const history = useHistory();
@@ -59,6 +64,7 @@ function PostCreateForm() {
     formData.append("title", title);
     formData.append("code", code);
     formData.append("content", content);
+    formData.append("post_rating", post_rating);
     formData.append("image", imageInput.current.files[0]);
 
     try {
@@ -88,6 +94,18 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
+
+{/* <Form.Group>
+        <Form.Label>How would you rate the set?</Form.Label>
+        <Rating />
+        <Form.Control
+        />
+        </Form.Group>
+        {errors?.title?.map((message, idx) => (
+          <Alert variant="warning" key={idx}>
+            {message}
+          </Alert>
+        ))} */}
 
 <Form.Group>
         <Form.Label>Lego Code</Form.Label>
