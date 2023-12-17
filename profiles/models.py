@@ -12,7 +12,7 @@ class Profile(models.Model):
     updated_at = models.DateTimeField(auto_now_add=True)
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
-    image = models.ImageField(upload_to="image/", default="../default_profile")
+    image = models.ImageField(upload_to="image/", default="../lego_default_profile_upaiwf")
 
     class Meta:
         ordering = ["-created_at"]
