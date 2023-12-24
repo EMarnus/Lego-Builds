@@ -4,8 +4,8 @@
 
 ### [Live Website](#)
 
-A community wesite to organise gaming events/times.  
-The objective of this is to provide a simple site to try to organise gaming events among friends. These days it's difficult to get my gaming group together to play something as we all have resposibilities this is an attempt to make getting together easier.
+A community wesite to share your Lego builds.  
+Share your newest Lego set or custom build with the community. Other users can easily identify the Lego Set, like and comment on the post. With an easy process to signup and start adding posts of your own.
 
 
 ## Table of Contents
@@ -16,6 +16,7 @@ The objective of this is to provide a simple site to try to organise gaming even
     1. [Strategy](#strategy)
         1. [Project Goals](#project-goals)
         2. [User Goals](#user-goals)
+        3. [Starting Board](#starting-board)
     2. [Structure](#structure)
         1. [Database Model](#database-model)
         2. [Wireframes](#wireframe)
@@ -37,21 +38,24 @@ The objective of this is to provide a simple site to try to organise gaming even
 
 #### Project Goals
 
-* The website contains simple colors for a modern and clean design.
+* The website is built using a simple colour palate to both match Lego's aesthetic and for a modern and clean design.
 
-* Responsive design to make the website accessible on different screen sizes.
+* Responsive design to make the website accessible on different screen sizes and devices.
 
-* Structure is easy to understand and navigates effortlessly.
+* The Website Structure is easy to understand and navigates smoothly.
 
-* Site users are able to register an account in order to interact with the content.
+* Site users are able to register an account to unlock ways to interact with the content.
 
-* Site users are able to post events and indicate if they would like to attand.
+* Site users are able to post their Lego Builds and comment on other builds, Follow, Like and Search for builds.
 
 
 #### User Goals
 GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress. I used lables on the stories to priority of the feature.
 
-[Features/Planning Board](#) 
+[Features/Planning Board](https://github.com/users/EMarnus/projects/5)  
+
+#### Starting Board
+![Starting Planning Board](readme_assets/Starting%20Board.PNG) 
 
 
 ### Structure
@@ -59,9 +63,10 @@ GitHub projects was used as my project management tool to track user stories. Us
 
 #### Database Model
 
-The database model has been designed using [drawsql](https://drawsql.app/). The type of database being used for the is relational database being managed using [PostgreSQL](https://www.postgresql.org/).
+The database models were designed using [drawsql](https://drawsql.app/), based on the models used by the Moments Porject. The type of database being used for the is a relational database being managed using [PostgreSQL](https://www.postgresql.org/) and hosted on [ElephantSQL](https://www.elephantsql.com/).
 
-![Data Model](assets/readme/datamodel.png)  
+#### Model Diagram
+![Data Model](readme_assets/model.PNG)  
 
 #### Wireframes
 
@@ -76,8 +81,8 @@ Profile | ![Desktop index / user logged in wireframe image](assets/readme/profil
 
 #### The Nav Bar
 
-  - Featured at the top of the page, bracketed by the site name and catchfrase we have the nav links
-  - If you're not logged in you see, A Home link that show all the events with some detals, the register link - lets you register and the Login link which lets you log in if you are already registered.  
+  - Featured at the top of the page, bracketed by the site name on the left and the nav links on the right.
+  - If you're not logged in you see, A home link, A sign in link and the sign up link.  
     ![Logged out Nav](assets/readme/outnav.PNG)
   - If you are logged in you see, A Home link that show all the events with some detals, Add Events which lets you add events, and a User dropdown which lets you logout and view your profile(To be expanded)  
   ![Logged in Nav](assets/readme/innav.PNG)
@@ -101,14 +106,7 @@ Profile | ![Desktop index / user logged in wireframe image](assets/readme/profil
 
 ### Features Left to Implement
 
-- Fleshed out Profile for users
-- Ability for Users to see others Profiles
-- Ability to message others
-- Ability to upload custom images for events
-- Reset passwords
-- Delete confirmation
-- Features left on Stretch
-
+- 
 ## Testing 
 
 Ongoing testing on Chrome as features were added. Additional Testing was done desktop Edge, Firefox & Mobile Chrome. Manual testing was done following this checklist [Checklist](https://docs.google.com/spreadsheets/d/1UXtTze1940aCpoY0gpDi4OD64AhHgHELo6on6-MYtAA/edit?usp=sharing).
