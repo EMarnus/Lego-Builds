@@ -14,68 +14,68 @@ import NoResults from "../../assets/no-results.png";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PopularPosts({ mobile, message, filter = "" }) {
-  const [posts, setPosts] = useState({ results: [] });
-  const [hasLoaded, setHasLoaded] = useState(false);
-  const { pathname } = useLocation();
-  const currentUser = useCurrentUser();
+	const [posts, setPosts] = useState({ results: [] });
+	const [hasLoaded, setHasLoaded] = useState(false);
+	const { pathname } = useLocation();
+	const currentUser = useCurrentUser();
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const { data } = await axiosReq.get("/posts/");
-        setPosts(data);
-        setHasLoaded(true);
-      } catch (err) {
-        // console.log(err);
-      }
-    };
+	useEffect(() => {
+		const fetchPosts = async () => {
+			try {
+				const { data } = await axiosReq.get("/posts/");
+				setPosts(data);
+				setHasLoaded(true);
+			} catch (err) {
+				// console.log(err);
+			}
+		};
 
-    setHasLoaded(false);
-    const timer = setTimeout(() => {
-      fetchPosts();
-    }, 1000);
+		setHasLoaded(false);
+		const timer = setTimeout(() => {
+			fetchPosts();
+		}, 1000);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [filter, pathname, currentUser]);
+		return () => {
+			clearTimeout(timer);
+		};
+	}, [filter, pathname, currentUser]);
 
-  return (
-    <Container
-      className={`${appStyles.Content} ${
-        mobile && "d-lg-none text-center mb-3"
-      } ${
-        styles.PopularBuilds
-      }`}
-    >
-      {hasLoaded ? (
-        <>
-          <p className={styles.Title}>
-            Most Liked Builds
-          </p>
-          {posts.results.length ? (
-            <>
-              {posts.results
-                .sort((a, b) => a.likes_count - b.likes_count)
-                .slice(0, 3)
-                .reverse()
-                .map((post) => (
-                  <PopularPost key={post.id} {...post} setPosts={setPosts} />
-                ))}
-            </>
-          ) : (
-            <Container className={appStyles.Content}>
-              <Asset src={NoResults} message={message} />
-            </Container>
-          )}
-        </>
-      ) : (
-        <Container className={appStyles.Content}>
-          <Asset spinner />
-        </Container>
-      )}
-    </Container>
-  );
+	return (
+		<Container
+			className={`${appStyles.Content} ${
+				mobile && "d-lg-none text-center mb-3"
+			} ${styles.PopularBuilds}`}
+		>
+			{hasLoaded ? (
+				<>
+					<p className={styles.Title}>Most Liked Builds</p>
+					{posts.results.length ? (
+						<>
+							{posts.results
+								.sort((a, b) => a.likes_count - b.likes_count)
+								.slice(0, 3)
+								.reverse()
+								.map((post) => (
+									<PopularPost
+										key={post.id}
+										{...post}
+										setPosts={setPosts}
+									/>
+								))}
+						</>
+					) : (
+						<Container className={appStyles.Content}>
+							<Asset src={NoResults} message={message} />
+						</Container>
+					)}
+				</>
+			) : (
+				<Container className={appStyles.Content}>
+					<Asset spinner />
+				</Container>
+			)}
+		</Container>
+	);
 }
 
 export default PopularPosts;

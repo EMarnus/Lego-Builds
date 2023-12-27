@@ -16,6 +16,7 @@ Share your newest Lego set or custom build with the community. Other users can e
     1. [Strategy](#strategy)
         1. [Project Goals](#project-goals)
         2. [User Goals](#user-goals)
+        2. [Main Technologies](#main-technologies)
         3. [Starting Board](#starting-board)
     2. [Structure](#structure)
         1. [Database Model](#database-model)
@@ -48,6 +49,29 @@ Share your newest Lego set or custom build with the community. Other users can e
 
 * Site users are able to post their Lego Builds and comment on other builds, Follow, Like and Search for builds.
 
+#### Main Technologies
+
+  - [HTML](https://www.w3schools.com/html/)
+  - [CSS](https://www.w3schools.com/css/default.asp)
+  - [JavaScript](https://www.w3schools.com/js/default.asp)
+  - [Python](https://www.w3schools.com/python/default.asp)
+  - [GitHub](https://github.com/)
+
+#### Libraries, Framworks and packages
+  - [React](https://react.dev/)  
+  React was used to build the Frontend
+  - [NPM Installer](https://docs.npmjs.com/)  
+  NPM was used to install packages and libraries
+  - [React Bootstrap](https://react.dev/)  
+  Used to create the layout of the website and some styling
+  - [JWT Decode](https://react.dev/)  
+  Originally used for security between the Front and Back ends
+  - [Whitenoise](https://react.dev/)  
+  - [react-infinite-scroll-component](https://react.dev/)  
+  Added to create infinite scrolling pages
+  - [react-router-dom](https://react.dev/)  
+  Used to enable the use of client side routing
+
 
 #### User Goals
 GitHub projects was used as my project management tool to track user stories. Using a Kanban board helped to focus on specific tasks and track the project progress. I used lables on the stories to priority of the feature.
@@ -77,7 +101,7 @@ Index / User Logged In | ![Desktop sign up wireframe image](assets/readme/ininde
 Sign Up | ![Desktop log in wireframe image](assets/readme/register.png) | 
 Profile | ![Desktop index / user logged in wireframe image](assets/readme/profile.png) | 
 
-### Features 
+### Features  
 
 #### The Nav Bar
 
@@ -114,9 +138,9 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 ### Validator Testing 
 
 - HTML - [W3C validator](https://validator.w3.org/)
-    - Pages tested on W3C, all issues raise were fixed
-- CSS - [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator)
-    - CSS tested and no problems found, Majority of styling from Bootstrap
+    - Pages tested on W3C, only info given
+- CSS - [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/)
+    - CSS tested and no problems found
 - Python code was checked by running pycodestyle and pylint on all the apps. Unable to resolve pycodestyle on migration files.
 
 ### Lighthouse Resualts
