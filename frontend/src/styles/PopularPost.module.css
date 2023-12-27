@@ -1,0 +1,29 @@
+.Post {
+    background-color: #fff;
+    border-radius: 15px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.CountNumber {
+    color: #fff;
+}
+
+.Card {
+    padding: 16px;
+    background-color: #000;
+}
+
+.Title {
+    color: #fff;
+}
+
+.Circle {
+    position: absolute !important;
+    top: 6px;
+    left: 6px;
+    background-color: #1c1c1c8c !important;
+    z-index: 2!important;
+}
