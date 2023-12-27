@@ -44,7 +44,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -60,7 +60,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -76,7 +76,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -104,7 +104,7 @@ const Post = (props) => {
       </Link>
       <Card.Body>
         {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {code && <Card.Title className="text-center">Item<i class="fa-sharp fa-thin fa-hashtag" style={{color: "#000000",}}></i>{code}</Card.Title>}
+        {code && <Card.Title className="text-center">Item<i className="fa-sharp fa-thin fa-hashtag" style={{color: "#000000",}}></i>{code}</Card.Title>}
         {content && <Card.Text>{content}</Card.Text>}
         <div className={styles.PostBar}>
           {is_owner ? (
