@@ -57,8 +57,8 @@ function PopularPosts({ mobile, message, filter = "" }) {
             <>
               {posts.results
                 .sort((a, b) => a.likes_count - b.likes_count)
-                .reverse()
                 .slice(0, 3)
+                .reverse()
                 .map((post) => (
                   <PopularPost key={post.id} {...post} setPosts={setPosts} />
                 ))}
