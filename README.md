@@ -2,7 +2,7 @@
 
 ![AM I Responsive images](#)
 
-### [Live Website](#)
+### [Live Website](https://lego-builds-284f09d1e728.herokuapp.com/)
 
 A community wesite to share your Lego builds.  
 Share your newest Lego set or custom build with the community. Other users can easily identify the Lego Set, like and comment on the post. With an easy process to signup and start adding posts of your own.
@@ -131,10 +131,14 @@ Profile | ![Desktop index / user logged in wireframe image](assets/readme/profil
 
 ### Features Left to Implement
 
-- 
+- Build Rating System
+- Multiple Images and Reduce saved image size
+- User Favourite
+
+
 ## Testing 
 
-Ongoing testing on Chrome as features were added. Additional Testing was done desktop Edge, Firefox & Mobile Chrome. Manual testing was done following this checklist [Checklist](https://docs.google.com/spreadsheets/d/1UXtTze1940aCpoY0gpDi4OD64AhHgHELo6on6-MYtAA/edit?usp=sharing).
+Ongoing testing on Chrome as features were added. Additional Testing was done desktop Edge, Firefox & Mobile Chrome. Manual testing was done following this checklist [Checklist](https://docs.google.com/spreadsheets/d/1rDn5DmbLlz_En2615I5K9rNAyRvYyBaUJsMl6w5PJ_Q/edit?usp=sharing).
 
 ### Validator Testing 
 
@@ -145,21 +149,25 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 - Python code was checked by running pycodestyle and pylint on all the apps. Unable to resolve pycodestyle on migration files.
 
 ### Lighthouse Resualts
-- Login  
-![Login](/assets/readme/lighthouse_login.PNG)
+- Sign In  
+![Sign in](/readme_assets/signin_lighthouse.PNG)
 
-- Register  
-![Register](/assets/readme/lighthouse_register.PNG)
+- Sign Up  
+![Sign Up](/readme_assets/signup_lighthouse.PNG)
 
 - Home  
-![Home](/assets/readme/lighthouse_home.PNG)
+![Home](/readme_assets/home_lighthouse.PNG)
 
 - Profile  
-![Profile](/assets/readme/lighthouse_profile.PNG)
+![Profile](/readme_assets/profile_lighthouse.PNG)
 
-- Add Event  
-![Add Event 1](/assets/readme/lighthouse_booking1.PNG)  
-![Add Event 2](/assets/readme/lighthouse_booking2.PNG)
+- Add Post  
+![Add Post](/readme_assets/addpost_lighthouse.PNG)
+
+- Post  
+![Post](/readme_assets/post_lighthouse.PNG)
+
+
 
 
 ### Fixed Bugs
