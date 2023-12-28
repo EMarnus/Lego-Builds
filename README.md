@@ -65,8 +65,9 @@ Share your newest Lego set or custom build with the community. Other users can e
   - [React Bootstrap](https://react.dev/)  
   Used to create the layout of the website and some styling
   - [JWT Decode](https://react.dev/)  
-  Originally used for security between the Front and Back ends
+  Used to access data in token between the Front and Back ends
   - [Whitenoise](https://react.dev/)  
+  Whitenoise is used to store static files
   - [react-infinite-scroll-component](https://react.dev/)  
   Added to create infinite scrolling pages
   - [react-router-dom](https://react.dev/)  
