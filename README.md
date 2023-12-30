@@ -1,6 +1,6 @@
 # My Lego Build
 
-![AM I Responsive images](#)
+![AM I Responsive images](/readme_assets/amiresponsive.PNG)
 
 ### [Live Website](https://lego-builds-284f09d1e728.herokuapp.com/)
 
@@ -20,14 +20,15 @@ Share your newest Lego set or custom build with the community. Other users can e
         3. [Starting Board](#starting-board)
     2. [Structure](#structure)
         1. [Database Model](#database-model)
-        2. [Wireframes](#wireframe)
 2. [Features](#features)
     1. [Nav Bar](#the-nav-bar)
     2. [Home Page](#home-page)
-    3. [Event Details Page](#event-details-page)
+    3. [Post Page](#post-page)
+    4. [Feed](#feed)
+    4. [Liked](#liked)
+    6. [Profile Page](#profile-page)
 3. [Features Left to Implement](#features-left-to-implement)
 4. [Testing](#testing)
-  1. [Testing](#testing)
 4. [Credits](#credits)
 
 ***
@@ -93,47 +94,70 @@ The database models were designed using [drawsql](https://drawsql.app/), based o
 #### Model Diagram
 ![Data Model](readme_assets/model.PNG)  
 
-#### Wireframes
-
-Page | Desktop Version | Mobile Version
---- | --- | ---
-Index / User Logged Out | ![Desktop index / user logged out wireframe image](assets/readme/outindex.png) | ![Mobile index / user logged out wireframe image](assets/readme/outindexm.png)
-Index / User Logged In | ![Desktop sign up wireframe image](assets/readme/inindex.png) | ![Mobile sign up wireframe image](assets/readme/inindexm.png)
-Sign Up | ![Desktop log in wireframe image](assets/readme/register.png) | 
-Profile | ![Desktop index / user logged in wireframe image](assets/readme/profile.png) | 
 
 ### Features  
 
 #### The Nav Bar
 
-  - Featured at the top of the page, bracketed by the site name on the left and the nav links on the right.
-  - If you're not logged in you see, A home link, A sign in link and the sign up link.  
-    ![Logged out Nav](assets/readme/outnav.PNG)
-  - If you are logged in you see, A Home link that show all the events with some detals, Add Events which lets you add events, and a User dropdown which lets you logout and view your profile(To be expanded)  
-  ![Logged in Nav](assets/readme/innav.PNG)
+  - Featured across top of the page.
+  - If you're not logged you have the home link, Sign in link and the sign up link.  
+
+  ![Logged out Nav](/readme_assets/nav_out.PNG)
+  - If you are logged in you see the:  
+   home link, that show all the post and top users and posts.   
+   Add Post which lets you add a post.   
+   Feed which shows you all the posts of users you have liked.   
+   Likeed which shows you all the posts you have liked.  
+   Sign out which signs you out.   
+   Profile where you can view your profile.  
+   
+  ![Logged in Nav](/readme_assets/nav_in.PNG)
 
 #### Home Page
 
-  - This section is the main focus of the website(for now). Here you see all the Events that have been posted by users with some detail.
-  - As a logged in user you can view more details on the Events or if you posted the Event you can access the Edit and Delete functions from here.  
-  ![Logged in Index](assets/readme/inindexbody.PNG)  
+  - Here you can see all the posts, initially loading 10 with infinite scroll.
+  - there is a search bar to look for specific posts.
+  - There are the top 4 most followed builders, you can click on the to view their profiles.
+  - There are the top 3 most liked builds, can be clicked to view the full post.
 
-  - As a logged out user you can only see the Event panels.
-  ![Logged out Index](assets/readme/outindexbody.PNG)
+  - As a logged in user you can like a post from here and follow one of the top builders.  
 
-#### Event Details Page  
+  ![Logged in Index](/readme_assets/home.PNG)  
 
-- In the first section you can see all the details for the events.
-![Details secion one](assets/readme/detialsone.PNG)
-- In the second section you can mark yourself as attanding the event, see previous comments and leave a comment of your own.
-![Details secion one](assets/readme/detailstwo.PNG)  
+
+#### Post Page  
+
+- The post page focuses on one build and allows you to leave a comment, you can also like from this page.
+- Also includes the most popular builders.
+- Top builds left off page due to this being the focus of a single build, don't want to distract from that.  
+
+![Post Page](/readme_assets/Post_page.PNG)  
+
+#### Feed  
+
+- The Feed page is the same as the home page except the posts have been filtered by users that you have followed.  
+
+#### Liked  
+
+- The Liked page is the same as the home page except the posts have been filtered to only show posts that you have previously liked.  
+
+#### Profile Page  
+
+- The profile page gives you details about a specific user.
+- You can see the users Bio if they have added one.
+- You can see how many Posts they have made, how many followers they have and how many users they are following.
+- You can follow the user from this page.
+- And you have all the post made by the user, again 10 initial with infinite scroll.  
+
+![Post Page](/readme_assets/profile_page.PNG)  
 
 
 ### Features Left to Implement
 
 - Build Rating System
 - Multiple Images and Reduce saved image size
-- User Favourite
+- User Favourite on profile page
+- ~~More~~ automated testing
 
 
 ## Testing 
@@ -172,23 +196,30 @@ Ongoing testing on Chrome as features were added. Additional Testing was done de
 
 ### Fixed Bugs
 - Search Broken [Fix Commit](https://github.com/EMarnus/Lego-Builds/commit/c8ff1f7e0cf9eacb12bc68c2870372991eed9422)
-- Login Status occasionaly lost with page loading
-- 
+- Login Status occasionaly lost with page loading.
+- Infinite Scrolling, found to be a gitpod issue after researching.
 
 
 ## Deployment
 
-- The site was deployed using Heroku following instructions from Code Institute for deploying a combined API and React Frontend: 
-  - In heroku Create a new App
-  - In your new App go to settings and reveal Config Vars, add your variables from env.py as well as PORT: 8000
-  - Make sure your repo contains a Procfile
-  - Go to Deploy, select GitHub as the Deployment method, Deploy Branch from Main.
+- The site was deployed using Heroku and the documentation from Code Institute for deploying a combined API and React Frontend: 
+
+- [Combined Project Deplyment Documentation](https://code-institute-students.github.io/advfe-unified-workspace/creating-an-app-in-a-workspace/00-creating-an-app-in-a-workspace)
+
+- Heroku
+1. Log in to heroku.com and open the dashboard for your react application (remember this is separate from the DRF application that runs your API)
+2. Select the “Deploy” tab in the dashboard
+3. Scroll down to the bottom and then select “Deploy Branch”
+4. Wait for your build to complete (you can click “view build log” to watch the process in a larger window)
+5. When you see the message “deployed to Heroku” in the build log, click the “open app” button at the top of the page.
+
 
 
 ## Credits 
 - Project is based on the Moments walkthrough Project by Code Institute.
 - Logo sourced from [Logo](https://www.freepnglogos.com/images/lego-png-logo-3370.html)
-- And as always Stack Overflow, just an awesome site where you can find all the answers especially the ones you weren't looking for.
+- And as always with suport from CI's Slack communitey and Tutors, Stack Overflow, just an awesome site where you can find all the answers especially the ones you weren't looking for.
+- My mentor for the project, Derek McAuley
 
 ### Content 
 - Content written by developer, unless otherwise credited

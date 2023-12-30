@@ -6,17 +6,12 @@
     overflow: hidden;
 }
 
-
-.CountNumber {
-    color: #fff;
-}
-
 .Card {
     padding: 16px;
-    background-color: #000;
+    background-color: #ffcf00;
 }
 
 .Title {
-    color: #fff;
+    color: #000000;
     margin: 0px;
 }
